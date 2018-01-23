@@ -5,7 +5,7 @@ Obtain an API key from https://www.wunderground.com by signing up and requesting
 Create a file called 'env.json' in the src folder that looks like this:
 
 {
-    "WUNDERGROUND_API_KEY": "<key goes here>"
+    "WUNDERGROUND_API_KEY": "asdfgjhkjlasdf"
 }
 
 
