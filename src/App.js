@@ -7,7 +7,7 @@ const env = require('./env.json')
 class App extends Component {
   constructor(props) {
     super(props)
-    this.state = { temperature: 71.2 }
+    this.state = {}
   }
 
   componentDidMount() {
