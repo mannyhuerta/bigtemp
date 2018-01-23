@@ -12,7 +12,7 @@ class App extends Component {
 
   componentDidMount() {
     console.log(env.WUNDERGROUND_API_KEY)
-    fetch(`http://api.wunderground.com/api/${env.WUNDERGROUND_API_KEY}/conditions/q/CA/San_Francisco.json`)
+    fetch(`http://api.wunderground.com/api/${env.WUNDERGROUND_API_KEY}/conditions/q/VA/Herndon.json`)
     .then((resp) => resp.json())
     .then((resp) => {
       this.setState(Object.assign({}, this.state, {current: resp.current_observation}))
@@ -20,18 +20,12 @@ class App extends Component {
   }
 
   getCurrent() {
-    return <div>The current conditions in San Francisco are: {this.state.current.feelslike_f} F</div>
+    return <div className='temp centered'><div> {this.state.current.feelslike_f} F</div><div>Herndon</div></div>
   }
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
+    <div>
         {this.state.current ? this.getCurrent() : <div>Retrieving temperature data...</div>}
-        </p>
       </div>
     );
   }
